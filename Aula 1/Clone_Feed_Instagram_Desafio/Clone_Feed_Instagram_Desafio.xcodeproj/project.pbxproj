@@ -11,6 +11,10 @@
 		414D8CC32D9834EC0062849C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414D8CC22D9834EC0062849C /* ContentView.swift */; };
 		414D8CC52D9834EE0062849C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 414D8CC42D9834EE0062849C /* Assets.xcassets */; };
 		414D8CC82D9834EE0062849C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 414D8CC72D9834EE0062849C /* Preview Assets.xcassets */; };
+		4188A80E2D99914C0048CD76 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4188A8042D99914B0048CD76 /* Preview Assets.xcassets */; };
+		4188A80F2D99914C0048CD76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4188A8062D99914B0048CD76 /* Assets.xcassets */; };
+		4188A8102D99914C0048CD76 /* Clone_Feed_Instagram_DesafioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4188A8072D99914B0048CD76 /* Clone_Feed_Instagram_DesafioApp.swift */; };
+		4188A8112D99914C0048CD76 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4188A8082D99914B0048CD76 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,11 @@
 		414D8CC22D9834EC0062849C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		414D8CC42D9834EE0062849C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		414D8CC72D9834EE0062849C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4188A8042D99914B0048CD76 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4188A8062D99914B0048CD76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4188A8072D99914B0048CD76 /* Clone_Feed_Instagram_DesafioApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clone_Feed_Instagram_DesafioApp.swift; sourceTree = "<group>"; };
+		4188A8082D99914B0048CD76 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4188A80A2D99914B0048CD76 /* Clone_Feed_Instagram_Desafio.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Clone_Feed_Instagram_Desafio.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +45,7 @@
 			isa = PBXGroup;
 			children = (
 				414D8CBF2D9834EC0062849C /* Clone_Feed_Instagram_Desafio */,
+				4188A80B2D99914B0048CD76 /* Clone_Feed_Instagram_Desafio */,
 				414D8CBE2D9834EC0062849C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -65,6 +75,39 @@
 				414D8CC72D9834EE0062849C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4188A8052D99914B0048CD76 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				4188A8042D99914B0048CD76 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4188A8092D99914B0048CD76 /* Clone_Feed_Instagram_Desafio */ = {
+			isa = PBXGroup;
+			children = (
+				4188A8052D99914B0048CD76 /* Preview Content */,
+				4188A8062D99914B0048CD76 /* Assets.xcassets */,
+				4188A8072D99914B0048CD76 /* Clone_Feed_Instagram_DesafioApp.swift */,
+				4188A8082D99914B0048CD76 /* ContentView.swift */,
+			);
+			path = Clone_Feed_Instagram_Desafio;
+			sourceTree = "<group>";
+		};
+		4188A80B2D99914B0048CD76 /* Clone_Feed_Instagram_Desafio */ = {
+			isa = PBXGroup;
+			children = (
+				4188A8092D99914B0048CD76 /* Clone_Feed_Instagram_Desafio */,
+				4188A80A2D99914B0048CD76 /* Clone_Feed_Instagram_Desafio.xcodeproj */,
+			);
+			name = Clone_Feed_Instagram_Desafio;
+			sourceTree = "<group>";
+		};
+		4188A80C2D99914B0048CD76 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -113,6 +156,12 @@
 			mainGroup = 414D8CB42D9834EC0062849C;
 			productRefGroup = 414D8CBE2D9834EC0062849C /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 4188A80C2D99914B0048CD76 /* Products */;
+					ProjectRef = 4188A80A2D99914B0048CD76 /* Clone_Feed_Instagram_Desafio.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				414D8CBC2D9834EC0062849C /* Clone_Feed_Instagram_Desafio */,
@@ -126,6 +175,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				414D8CC82D9834EE0062849C /* Preview Assets.xcassets in Resources */,
+				4188A80E2D99914C0048CD76 /* Preview Assets.xcassets in Resources */,
+				4188A80F2D99914C0048CD76 /* Assets.xcassets in Resources */,
 				414D8CC52D9834EE0062849C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,7 +188,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4188A8102D99914C0048CD76 /* Clone_Feed_Instagram_DesafioApp.swift in Sources */,
 				414D8CC32D9834EC0062849C /* ContentView.swift in Sources */,
+				4188A8112D99914C0048CD76 /* ContentView.swift in Sources */,
 				414D8CC12D9834EC0062849C /* Clone_Feed_Instagram_DesafioApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

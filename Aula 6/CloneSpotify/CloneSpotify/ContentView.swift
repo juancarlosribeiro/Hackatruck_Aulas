@@ -108,10 +108,11 @@ struct ContentView: View {
                                                     
                                                     
                                                 }.padding()
+                                                Spacer()
                                                 
                                                 Image(systemName: "ellipsis")
                                                     .foregroundColor(.white)
-                                            }
+                                            }.padding(.horizontal)
                                         }
                                     }
                                 }

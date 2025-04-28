@@ -34,7 +34,9 @@ struct ContentView: View {
             
             Song(name: "Vampire", artist: "Olivia Rodrigo", capa: "https://i.scdn.co/image/ab67616d00001e02e85259a1cae29a8d91f2093d"),
             
-            Song(name: "Leão", artist: "Marilia Mendonca", capa: "https://i.scdn.co/image/ab67616d00001e02cca35237571dbce12a43fbb4")
+            Song(name: "Leão", artist: "Marilia Mendonca", capa: "https://i.scdn.co/image/ab67616d00001e02cca35237571dbce12a43fbb4"),
+            
+            Song(name: "Tá Rocheda", artist: "Barões da Pisadinha", capa: "https://i.scdn.co/image/ab67616d00001e027565a4bf6b379cab62afd320")
 
         
         
@@ -122,6 +124,54 @@ struct ContentView: View {
                             
                             
                         }
+                        
+                        
+                        VStack(alignment: .trailing){
+                            HStack{
+                                Text("Sugeridos")
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 30))
+                                Spacer()
+                            }
+                            
+                        }.padding()
+                        
+                        
+                        
+                        ScrollView(.horizontal){
+                            
+                            HStack{
+                                
+                                ForEach(arrayMusiquinhas, id: \.self) { index in
+                                    
+                                    
+                                    
+                                    NavigationLink(destination: MusicasView(recebe: index)){
+                                        
+                                        VStack{
+                                            AsyncImage(url: URL(string: index.capa)){ image in
+                                                image.resizable()
+                                            } placeholder: {ProgressView()}
+                                                .frame(width: 200, height: 200)
+                                            
+                                            HStack{
+                                                
+                                                Text(index.artist)
+                                                    .foregroundColor(.white)
+                                                
+                                            }
+                                            
+                                        }
+                                    }
+                                }
+                            }
+                            
+                        }
+                        
+                        
+                        
+                        
+                        
                     }
                 }
                 

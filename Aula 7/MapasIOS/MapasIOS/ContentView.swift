@@ -25,6 +25,7 @@ struct ContentView: View {
     )
     
     @State var shitaView: Bool = false
+
     
     var arrayLocais = [
         Location(nome: "Cristo Redentor", foto: "https://blog.paineirascorcovado.com.br/wp-content/uploads/2025/01/Paineiras_Drone_C-008-scaled.jpg", descricao: "Cristo Redentor é uma estátua que retrata Jesus Cristo localizada no topo do morro do Corcovado, a 709 metros acima do nível do mar, dentro do Parque Nacional da Tijuca. Tem vista para parte considerável da cidade brasileira do Rio de Janeiro, sendo a frente da estátua voltada para a Baía de Guanabara e as costas para a Floresta da Tijuca. Feito de concreto armado e pedra-sabão,[1][2][3] tem trinta metros de altura (uma das maiores estátuas do mundo), sem contar os oito metros do pedestal, sendo a mais alta estátua do mundo no estilo Art Déco.[4][5] Seus braços se esticam por 28 metros de largura e a estrutura pesa 1145 toneladas.[6] O monumento é um santuário católico e a Arquidiocese do Rio de Janeiro administra a estátua e a capela localizada dentro do seu pedestal, além de também ser responsável pelas celebrações e manutenção do conjunto. O direito de gerenciar a estátua foi concedido pela União à Arquidiocese do Rio na década de 1930, mas o acesso à estátua e a administração do platô onde ela se localiza são realizados pelo Parque Nacional da Tijuca, uma Unidade de Conservação federal gerida pelo Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio).", latitude: -22.9519175 , longitude: -43.2105696),
@@ -44,89 +45,140 @@ struct ContentView: View {
     @State var aux =  Location(nome: "Estatua da Liberdade", foto: "https://cdn-imgix.headout.com/tour/30357/TOUR-IMAGE/6cdcf542-452d-4897-beed-76cf68f154e4-1act-de005e04-05d9-4715-96b0-6a089d5c3460.jpg?auto=format&w=1222.3999999999999&h=687.6&q=90&fit=crop&ar=16%3A9&crop=faces", descricao: "Estátua da Liberdade (em inglês: The Statue of Liberty; em francês: Statue de la Liberté), cujo nome oficial é A Liberdade Iluminando o Mundo (em inglês: Liberty Enlightening the World; em francês: La liberté éclairant le monde), é uma escultura neoclássica colossal localizada na ilha da Liberdade no porto de Nova Iorque, nos Estados Unidos. A estátua de cobre, projetada pelo escultor francês Frédéric Auguste Bartholdi, que se baseou no Colosso de Rodes para edificá-la, foi construída por Gustave Eiffel e inaugurada em 28 de outubro de 1886.[7] Foi um presente dado aos Estados Unidos pelo povo da França.[8] A estátua é de uma figura feminina vestida que representa Libertas, deusa romana, que carrega uma tocha e um tabula ansata (uma tabuleta que evoca uma lei) sobre a qual está inscrita a data da Declaração da Independência dos Estados Unidos, 4 de julho de 1776.[8] Uma corrente quebrada encontra-se a sob pés. A estátua é um ícone da liberdade e dos Estados Unidos, além de ser um símbolo de boas-vindas aos imigrantes que chegam do exterior.", latitude: 40.6892664 , longitude: -74.0445245)
     
     
+    @State private var selectedCountry =  Location(nome: "Cristo Redentor", foto: "https://cdn-imgix.headout.com/tour/30357/TOUR-IMAGE/6cdcf542-452d-4897-beed-76cf68f154e4-1act-de005e04-05d9-4715-96b0-6a089d5c3460.jpg?auto=format&w=1222.3999999999999&h=687.6&q=90&fit=crop&ar=16%3A9&crop=faces", descricao: "Estátua da Liberdade (em inglês: The Statue of Liberty; em francês: Statue de la Liberté), cujo nome oficial é A Liberdade Iluminando o Mundo (em inglês: Liberty Enlightening the World; em francês: La liberté éclairant le monde), é uma escultura neoclássica colossal localizada na ilha da Liberdade no porto de Nova Iorque, nos Estados Unidos. A estátua de cobre, projetada pelo escultor francês Frédéric Auguste Bartholdi, que se baseou no Colosso de Rodes para edificá-la, foi construída por Gustave Eiffel e inaugurada em 28 de outubro de 1886.[7] Foi um presente dado aos Estados Unidos pelo povo da França.[8] A estátua é de uma figura feminina vestida que representa Libertas, deusa romana, que carrega uma tocha e um tabula ansata (uma tabuleta que evoca uma lei) sobre a qual está inscrita a data da Declaração da Independência dos Estados Unidos, 4 de julho de 1776.[8] Uma corrente quebrada encontra-se a sob pés. A estátua é um ícone da liberdade e dos Estados Unidos, além de ser um símbolo de boas-vindas aos imigrantes que chegam do exterior.", latitude: 40.6892664 , longitude: -74.0445245)
+    
+    
+    
     
     var body: some View {
         
-        Map(position: $position){
+        ZStack{
             
-            ForEach(arrayLocais, id: \.self) { index in
-                Annotation(index.nome, coordinate:CLLocationCoordinate2D(latitude: index.latitude,longitude:  index.longitude)){
-                    
-                    Image(systemName: "mappin.circle.fill")
-                        .resizable()
-                        .foregroundColor(.black)
-                        .font(.system(size: 30))
-                        .onTapGesture {
-                            shitaView.toggle()
-                           aux = index
-                        }
-                   .sheet(isPresented: $shitaView) {
-                        SheetView(recebe: $aux)
-                        
-                    }
-                }
-                
-            }
-        }
-        
-    }
-}
-    
-#Preview {
-    ContentView()
-}
-
-struct SheetView : View {
-    @Binding var recebe : Location
-    var body: some View {
-        ZStack {
-            Rectangle()
-                .foregroundColor(.yellow)
-                .ignoresSafeArea()
             
-            ScrollView{
-                Spacer()
+            Map(position: $position){
                 
-                VStack {
-                    
-                    Spacer()
-                    
-                    VStack{
+                ForEach(arrayLocais, id: \.self) { index in
+                    Annotation(index.nome, coordinate:CLLocationCoordinate2D(latitude: index.latitude,longitude:  index.longitude)){
                         
-                        AsyncImage(url: URL(string: recebe.foto)){ image in
-                            image.resizable()
-                                .scaledToFill()
-                                .scaledToFill()
-                        } placeholder: {
-                            ProgressView()
-                        }
-                        
-                        
-                    }.padding()
-                    
-                    Spacer()
-                    
-                    VStack{
-                        Text(recebe.nome)
-                            .foregroundColor(.brown)
-                            .bold()
+                        Image(systemName: "mappin.circle.fill")
+                            .resizable()
+                            .foregroundColor(.black)
                             .font(.system(size: 30))
+                            .onTapGesture {
+                                shitaView.toggle()
+                                aux = index
+                            }
+                            .sheet(isPresented: $shitaView) {
+                                SheetView(recebe: $aux)
+                                
+                            }
+                    }
+                    
+                }
+            }.ignoresSafeArea()
+            
+            VStack{
+                Picker(selection: $selectedCountry, label: Text("Lugares para Visitar")){
+                    
+                    ForEach(arrayLocais, id: \.self) { i in
+                        Text(i.nome)
+                    }.onChange(of: selectedCountry){ i in
+                        position = MapCameraPosition.region(MKCoordinateRegion(
+                            center:CLLocationCoordinate2D(latitude: i.latitude, longitude: i.longitude), span: MKCoordinateSpan(latitudeDelta: 30, longitudeDelta: 30)))
+                        
+                        
                         
                     }
-                    Spacer()
                     
-                    VStack{
-                        Text(recebe.descricao)
-                            .background(.brown)
-                        
-                        
-                    }.padding()
-                }
+                }.background(Rectangle()
+                    .fill(.yellow)
+                    .frame(width: 200, height: 60)
+                    .cornerRadius(6)
+                    
+                             
+                ).padding()
+                    .accentColor(.black)
                 
+                    Spacer()
                 
+                    Text("Pontos Turisticos pelo mundo")
+                    .bold()
+                    .background(Rectangle()
+                        .fill(.yellow)
+                        .frame(width: 300, height: 60)
+                        .cornerRadius(6))
+
             }
-            
+
+           
             
         }
+        
+        
+        
+        
+        
     }
 }
+        
+        
+        
+        #Preview {
+            ContentView()
+        }
+        
+        struct SheetView : View {
+            @Binding var recebe : Location
+            var body: some View {
+                ZStack {
+                    Rectangle()
+                        .foregroundColor(.yellow)
+                        .ignoresSafeArea()
+                    
+                    ScrollView{
+                        Spacer()
+                        
+                        VStack {
+                            
+                            Spacer()
+                            
+                            VStack{
+                                
+                                AsyncImage(url: URL(string: recebe.foto)){ image in
+                                    image.resizable()
+                                        .scaledToFill()
+                                        .scaledToFill()
+                                } placeholder: {
+                                    ProgressView()
+                                }
+                                
+                                
+                            }.padding()
+                            
+                            Spacer()
+                            
+                            VStack{
+                                Text(recebe.nome)
+                                    .foregroundColor(.brown)
+                                    .bold()
+                                    .font(.system(size: 30))
+                                
+                            }
+                            Spacer()
+                            
+                            VStack{
+                                Text(recebe.descricao)
+                                    .background(.brown)
+                                
+                                
+                            }.padding()
+                        }
+                        
+                        
+                    }
+                    
+                    
+                }
+            }
+        }
+    

@@ -14,29 +14,38 @@ struct modo1: View {
             .ignoresSafeArea()
             
             VStack{
-                Text("Modo 1")
-                    .bold()
-                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                    .foregroundColor(.white)
-                    .offset(y: -300)
+            
+            
+                VStack{
+                    Text("Modo 1")
+                        .bold()
+                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                        .foregroundColor(.white)
+                    
+                }
+                
+                Spacer()
+   
+                VStack{
+                    
+                    Text("Mario")
+                        .foregroundColor(.white)
+                        .font(.system(size: 30))
+                    
+                    Text("Júnior")
+                        .foregroundColor(.white)
+                        .font(.system(size: 30))
+                    
+                    
+                }.background(Rectangle()
+                    .frame(width: 300, height: 200)
+                    .foregroundColor(.rosinhadeCaixa))
+                
+                
+                Spacer()
                 
                 
             }
-            
-            
-            
-            VStack{
-                
-                Text("Nome")
-                    .foregroundColor(.white)
-                
-                Text("Sobrenome")
-                    .foregroundColor(.white)
-                
-                
-            }.background(Rectangle()
-                .frame(width: 300, height: 200)
-                .foregroundColor(.rosinhadeCaixa))
             
             
             

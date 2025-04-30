@@ -26,7 +26,7 @@ struct modo2: View {
                 
                 VStack{
                     
-                    TextField("TESTE", text: $nome)
+                    TextField("Teste", text: $nome)
                         .frame(width: 150, height: 60)
                         .foregroundColor(.white)
                     
@@ -37,13 +37,14 @@ struct modo2: View {
                     
                     
                     
-                    NavigationLink(destination: modo2de2()){
+                    NavigationLink(destination: modo2de2(nome: nome)){
                         
                         
                         
                         
                         Text("Acessar Tela")
                             .foregroundColor(.white)
+                            .bold()
                             .frame(width: 150, height: 60)
                             .background(.blue)
                             .cornerRadius(6)

@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct modo2de2: View {
+    
+    @State public var nome: String = ""
+
+    
     var body: some View {
         ZStack{
             Color.corDeFundo
@@ -16,7 +20,7 @@ struct modo2de2: View {
             
             VStack{
                 
-                Text("Volte, sei lá!")
+                Text("Volte, \(nome)!")
                     .foregroundColor(.white)
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                 

@@ -91,9 +91,9 @@ struct ContentView: View {
                 
                 Spacer()
                 
-            }
+            }.padding()
         }
-        .padding()
+        
     }
 }
 

@@ -104,6 +104,10 @@ struct ContentView: View {
                                 .foregroundColor(.letra)
                                 .font(.system(size: 22))
                             
+                            TextField("", text: $observacoes, axis: .vertical)
+                                .textFieldStyle(.roundedBorder)
+                            
+                            
                             
                             
                             Text("Observações:")

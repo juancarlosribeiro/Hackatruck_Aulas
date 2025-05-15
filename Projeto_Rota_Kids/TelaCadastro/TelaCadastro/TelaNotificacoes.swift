@@ -2,7 +2,7 @@
 //  TelaNotificacoes.swift
 //  TelaCadastro
 //
-//  Created by Turma01-17 on 15/05/25.
+//  Created by Juan Carlos on 15/05/25.
 //
 
 import SwiftUI

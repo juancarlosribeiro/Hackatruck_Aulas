@@ -39,7 +39,7 @@ struct ContentView: View {
                             .onChange(of: viewModel.nome) { newValue in
                                 viewModel.isNomeValid = !viewModel.nome.isEmpty
                             }.overlay(alignment: .trailing) {
-                                if !viewModel.isNomeValid && !viewModel.nome.isEmpty {
+                                if !viewModel.isNomeValid && viewModel.nome.isEmpty {
                                     Image(systemName: "exclamationmark.triangle.fill")
                                         .foregroundColor(.red)
                                         .padding(.trailing, 10)
@@ -56,7 +56,7 @@ struct ContentView: View {
                                 viewModel.isTelefoneValid = !viewModel.telefone.isEmpty
                             }
                             .overlay(alignment: .trailing) {
-                                if !viewModel.isTelefoneValid && !viewModel.telefone.isEmpty {
+                                if !viewModel.isTelefoneValid && viewModel.telefone.isEmpty {
                                     Image(systemName: "exclamationmark.triangle.fill")
                                         .foregroundColor(.red)
                                         .padding(.trailing, 10)
@@ -73,7 +73,7 @@ struct ContentView: View {
                                 viewModel.isEnderecoValid = !viewModel.endereco.isEmpty
                             }
                             .overlay(alignment: .trailing) {
-                                if !viewModel.isEnderecoValid && !viewModel.endereco.isEmpty {
+                                if !viewModel.isEnderecoValid && viewModel.endereco.isEmpty {
                                     Image(systemName: "exclamationmark.triangle.fill")
                                         .foregroundColor(.red)
                                         .padding(.trailing, 10)
@@ -90,7 +90,7 @@ struct ContentView: View {
                                 viewModel.isApelidoValid = !viewModel.apelido.isEmpty
                             }
                             .overlay(alignment: .trailing) {
-                                if !viewModel.isApelidoValid && !viewModel.apelido.isEmpty {
+                                if !viewModel.isApelidoValid && viewModel.apelido.isEmpty {
                                     Image(systemName: "exclamationmark.triangle.fill")
                                         .foregroundColor(.red)
                                         .padding(.trailing, 10)

@@ -14,6 +14,7 @@
 		416022E32DD3D13B001E4B22 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416022E22DD3D13B001E4B22 /* ContentView.swift */; };
 		416022E52DD3D144001E4B22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 416022E42DD3D144001E4B22 /* Assets.xcassets */; };
 		416022E82DD3D144001E4B22 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 416022E72DD3D144001E4B22 /* Preview Assets.xcassets */; };
+		41D7782A2DD79F1200E75DFC /* ViewModelCadastro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D778292DD79F1200E75DFC /* ViewModelCadastro.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		416022E22DD3D13B001E4B22 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		416022E42DD3D144001E4B22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		416022E72DD3D144001E4B22 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		41D778292DD79F1200E75DFC /* ViewModelCadastro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelCadastro.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				4133CF292DD64DBD0080BE78 /* TelaNotificacoes.swift */,
 				4133CF2B2DD66B530080BE78 /* ViewModelPos.swift */,
 				4133CF2D2DD673610080BE78 /* Model.swift */,
+				41D778292DD79F1200E75DFC /* ViewModelCadastro.swift */,
 			);
 			path = TelaCadastro;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 				4133CF2E2DD673610080BE78 /* Model.swift in Sources */,
 				416022E32DD3D13B001E4B22 /* ContentView.swift in Sources */,
 				416022E12DD3D13B001E4B22 /* TelaCadastroApp.swift in Sources */,
+				41D7782A2DD79F1200E75DFC /* ViewModelCadastro.swift in Sources */,
 				4133CF2A2DD64DBD0080BE78 /* TelaNotificacoes.swift in Sources */,
 				4133CF2C2DD66B530080BE78 /* ViewModelPos.swift in Sources */,
 			);
